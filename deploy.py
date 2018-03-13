@@ -125,7 +125,7 @@ try:
     #if tx_receipt['status'] == 0:
 
     # Show the status to the user
-    if tx_receipt['gasUsed'] >= tx_receipt['cumulativeGasUsed']:
+    if tx_receipt['gasUsed'] > tx_receipt['gasLimit']:
         logger.critical("Most probably ran out of gas.")
         logger.critical("Check the Contract address in a block explorer or try to call it.")
         logger.warning("Contract address: " + tx_receipt['contractAddress'])
